@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\morj\\Desktop\\practice-back\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|c:\\users\\morj\\desktop\\practice-back\\dependencies\\state\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|solutionrelative:dependencies\\state\\state.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|c:\\users\\morj\\desktop\\practice-back\\dependencies\\dataservice\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|solutionrelative:dependencies\\dataservice\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|c:\\users\\morj\\desktop\\practice-back\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54C4E5DF-3D3E-4401-959F-6FD43BD9A749}|practice-back.csproj|solutionrelative:todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataService.cs",
+              "DocumentMoniker": "C:\\Users\\morj\\Desktop\\practice-back\\Dependencies\\DataService\\DataService.cs",
+              "RelativeDocumentMoniker": "Dependencies\\DataService\\DataService.cs",
+              "ToolTip": "C:\\Users\\morj\\Desktop\\practice-back\\Dependencies\\DataService\\DataService.cs",
+              "RelativeToolTip": "Dependencies\\DataService\\DataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:57:38.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "State.cs",
+              "DocumentMoniker": "C:\\Users\\morj\\Desktop\\practice-back\\Dependencies\\State\\State.cs",
+              "RelativeDocumentMoniker": "Dependencies\\State\\State.cs",
+              "ToolTip": "C:\\Users\\morj\\Desktop\\practice-back\\Dependencies\\State\\State.cs",
+              "RelativeToolTip": "Dependencies\\State\\State.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T19:58:01.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TodoController.cs",
+              "DocumentMoniker": "C:\\Users\\morj\\Desktop\\practice-back\\TodoController.cs",
+              "RelativeDocumentMoniker": "TodoController.cs",
+              "ToolTip": "C:\\Users\\morj\\Desktop\\practice-back\\TodoController.cs",
+              "RelativeToolTip": "TodoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T12:09:50.994Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
