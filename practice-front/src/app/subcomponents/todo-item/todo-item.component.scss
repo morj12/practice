@@ -1,0 +1,16 @@
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  &-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    &-item {
+      padding-left: 10px;
+      &-danger {
+        color: red;
+      }
+    }
+  }
+}

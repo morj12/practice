@@ -1,0 +1,8 @@
+<div class="todo-item">
+  <mat-checkbox [(ngModel)]="todo.completed" (change)="onCheckboxClicked()"></mat-checkbox>
+  {{ todo.title }}
+  <div class="todo-item-buttons">
+    <button mat-button class="todo-item-buttons-item" (click)="onUpdatedClicked()">Update</button>
+    <button mat-button class="todo-item-buttons-item-danger" (click)="onDeleteClicked()">Delete</button>
+  </div>
+</div>

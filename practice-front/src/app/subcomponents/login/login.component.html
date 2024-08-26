@@ -1,0 +1,21 @@
+<div class="login">
+  <ng-container *ngIf="users.length > 0; else loading">
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="login-email" appearance="outline">
+        <mat-label>Introduce your email</mat-label>
+        <input matInput formControlName="email">
+        <mat-hint class="login-email-hint" *ngIf="!currentUser && formSubmitted">There is no user with this email
+        </mat-hint>
+        <mat-hint class="login-email-hint" *ngIf="!isCorrectEmail">The email format is incorrect</mat-hint>
+      </mat-form-field>
+
+      <button type="submit" mat-button [disabled]="!emailForm.valid">Log in</button>
+    </form>
+
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-progress-spinner mode="indeterminate"/>
+  </ng-template>
+
+</div>

@@ -1,0 +1,148 @@
+@mixin lists-styles {
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  &-item {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    &-stats {
+      margin-left: 10px;
+      &-row {
+        display: flex;
+        flex-direction: row;
+        &-winlose {
+          margin-left: 10px;
+          display: flex;
+          flex-direction: row;
+          &-win {
+            color: green;
+          }
+          &-lose {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+    &-profile {
+      margin-top: 10px;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+      &-info {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        &-title {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        &-winlose {
+          display: flex;
+          flex-direction: row;
+          &-win {
+            color: green;
+          }
+          &-lose {
+            color: red;
+          }
+        }
+        &-stats {
+          margin-left: 10px;
+          display: flex;
+          flex-direction: row;
+          &-column {
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+            &-item {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+  }
+  &-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    &-lists {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      &-heroes {
+        @include lists-styles;
+      }
+      &-peers {
+        @include lists-styles;
+      }
+      &-matches {
+        margin-top: 20px;
+        &-item {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: row;
+          &-row {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            &-win {
+              color: green;
+              font-weight: bold;
+            }
+            &-lose {
+              color: red;
+              font-weight: bold;
+            }
+            &-kda {
+              display: flex;
+              flex-direction: row;
+              &-kill {
+                color: green;
+              }
+              &-death {
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-charts {
+      display: flex;
+      flex-direction: column;
+      &-item {
+        width: 550px;
+        height: 350px;
+        display: block;
+      }
+    }
+  }
+}
+
+.about-column-lists > div {
+  max-height: 650px;
+  width: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+}
+
+h5 {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+
+

@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Confirmation</h2>
+<mat-dialog-content class="upsert-todo-dialog">
+  <form *ngIf="descriptionForm" [formGroup]="descriptionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="upsert-todo-dialog-input" appearance="outline">
+      <mat-label>Introduce your todo</mat-label>
+      <textarea matInput rows="5" formControlName="description"></textarea>
+      <mat-hint class="upsert-todo-dialog-input-hint" *ngIf="!isCorrectForm">Description length should be between 1 and
+        250
+      </mat-hint>
+    </mat-form-field>
+    <mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Cancel</button>
+      <button mat-button type="submit" [disabled]="!descriptionForm!.valid">{{ confirmationButtonText }}</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+

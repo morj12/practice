@@ -1,0 +1,11 @@
+<div class="todo-list">
+  <ng-container *ngIf="todos; else loading">
+    <button class="todo-list-button" mat-button (click)="onAddTodo()">Add new item</button>
+    <todo-item *ngFor="let todo of todos, trackBy: trackById" [todo]="todo" (onUpdateEvent)="onUpdateTodo($event)"
+               (onDeleteEvent)="onDeleteTodo($event)" (onUpdateCheckboxEvent)="onUpdateCheckboxEvent($event)"/>
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-progress-spinner mode="indeterminate"/>
+  </ng-template>
+</div>

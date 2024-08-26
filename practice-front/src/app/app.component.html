@@ -1,0 +1,15 @@
+<mat-toolbar class="header">
+  <span>{{ title }}</span>
+
+  <div class="header-menu">
+    <button mat-button class="header-menu-item" routerLink="/list" routerLinkActive="active">Home</button>
+    <button mat-button class="header-menu-item" routerLink="/about" routerLinkActive="active">About</button>
+  </div>
+
+  <div *ngIf="userService.currentUser?.name" class="header-user">
+    Hello, {{ userService.currentUser?.name }}!
+    <button mat-button (click)="onLogoutClicked()">Log out</button>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,130 @@
+<div class="about">
+  <div class="about-profile">
+    <div *ngIf="account?.profile?.avatar; else loading" class="about-profile-img">
+      <img priority="priority" ngSrc="{{account!.profile!.avatar}}" width="150" height="150"/>
+    </div>
+    <div class="about-profile-info">
+      <div class="about-profile-info-title" *ngIf="account?.profile?.name">
+        <h4>{{ account!.profile!.name }}</h4>
+      </div>
+      <div *ngIf="account?.profile?.accountId">
+        Steam Id: {{ account!.profile!.accountId }}
+      </div>
+      <div *ngIf="playerWinLose?.win && playerWinLose?.lose">
+        <div>Total games: {{ playerWinLose!.win + playerWinLose!.lose }}</div>
+        <div class="about-profile-info-winlose">
+          <div class="about-profile-info-winlose-win">{{ playerWinLose!.win }}</div>
+          -
+          <div class="about-profile-info-winlose-lose">{{ playerWinLose!.lose }}</div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playerStats; else loading" class="about-profile-info">
+      <div class="about-profile-info-stats">
+        <div class="about-profile-info-stats-column">
+          <div class="about-profile-info-stats-column-item">Kills: {{ playerStats.kills }}</div>
+          <div class="about-profile-info-stats-column-item">Deaths: {{ playerStats.deaths }}</div>
+          <div class="about-profile-info-stats-column-item">Assists: {{ playerStats.assists }}</div>
+          <div class="about-profile-info-stats-column-item">KDA: {{ playerStats.kda }}</div>
+        </div>
+        <div class="about-profile-info-stats-column">
+          <div class="about-profile-info-stats-column-item">Gold per minute: {{ playerStats.goldPerMin }}</div>
+          <div class="about-profile-info-stats-column-item">Xp per minute: {{ playerStats.xpOerMin }}</div>
+          <div class="about-profile-info-stats-column-item">Actions per minute: {{ playerStats.actionsPerMinute }}</div>
+        </div>
+        <div class="about-profile-info-stats-column">
+          <div class="about-profile-info-stats-column-item">Last hits: {{ playerStats.lastHits }}</div>
+          <div class="about-profile-info-stats-column-item">Denies: {{ playerStats.denies }}</div>
+          <div class="about-profile-info-stats-column-item">Hero damage: {{ playerStats.heroDamage }}</div>
+          <div class="about-profile-info-stats-column-item">Hero healing: {{ playerStats.heroHealing }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-column">
+    <div class="about-column-lists">
+      <div *ngIf="playerHeroes.length > 0; else loading" class="about-column-lists-heroes">
+        <h5>Most played heroes</h5>
+        <div *ngFor="let hero of playerHeroes" class="about-column-lists-heroes-item">
+          <img ngSrc="{{getHeroUrl(hero!.heroId)}}" width="128" height="72"/>
+          <div class="about-column-lists-heroes-item-stats">
+            <div class="about-column-lists-heroes-item-stats-row">
+              <div>Games: {{ hero!.games }}</div>
+              <div class="about-column-lists-heroes-item-stats-row-winlose">
+                <div class="about-column-lists-heroes-item-stats-row-winlose-win">{{ hero!.win }}</div>
+                -
+                <div class="about-column-lists-heroes-item-stats-row-winlose-lose">{{ hero!.games - hero!.win }}</div>
+              </div>
+            </div>
+            <div class="about-column-lists-heroes-item-stats-row">
+              Last played: {{ hero!.lastPlayed | date }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="playerPeers.length > 0; else loading" class="about-column-lists-peers">
+        <h5>Team mates</h5>
+        <div *ngFor="let player of playerPeers" class="about-column-lists-peers-item">
+          <img ngSrc="{{player.avatar}}" width="100" height="100"/>
+          <div class="about-column-lists-peers-item-stats">
+            <div class="about-column-lists-peers-item-stats-row">{{ player!.name }}</div>
+            <div class="about-column-lists-peers-item-stats-row">
+              <div>Games: {{ player!.games }}</div>
+              <div class="about-column-lists-peers-item-stats-row-winlose">
+                <div class="about-column-lists-peers-item-stats-row-winlose-win">{{ player!.win }}</div>
+                -
+                <div class="about-column-lists-peers-item-stats-row-winlose-lose">{{ player!.games - player!.win }}
+                </div>
+              </div>
+            </div>
+            <div class="about-column-lists-peers-item-stats-row">
+              Last played: {{ player!.lastPlayed | date }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="playerMatches.length > 0; else loading" class="about-column-lists-matches">
+        <h5>Last 20 matches</h5>
+        <div *ngFor="let match of playerMatches" class="about-column-lists-matches-item">
+          <img ngSrc="{{getHeroUrl(match!.heroId)}}" width="128" height="72"/>
+          <div class="about-column-lists-matches-item-row">
+            <div *ngIf="match.isWin" class="about-column-lists-matches-item-row-win">Win</div>
+            <div *ngIf="!match.isWin" class="about-column-lists-matches-item-row-lose">Lose</div>
+            <div class="about-column-lists-matches-item-row-kda">
+              <div class="about-column-lists-matches-item-row-kda-kill">{{ match.kills }}</div>
+              /
+              <div class="about-column-lists-matches-item-row-kda-death">{{ match.deaths }}</div>
+              /
+              <div>{{ match.assists }}</div>
+            </div>
+            <div>{{ match.startTime | date }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-column-charts">
+      <div *ngIf="playerHeroes && popularityChartOptions; else loading">
+        <highcharts-chart class="about-column-charts-item" [Highcharts]="Highcharts"
+                          [options]="popularityChartOptions"></highcharts-chart>
+      </div>
+
+      <div *ngIf="playerHeroes && winrateChartOptions; else loading">
+        <highcharts-chart class="about-column-charts-item" [Highcharts]="Highcharts"
+                          [options]="winrateChartOptions"></highcharts-chart>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<ng-template #loading>
+  <mat-progress-spinner mode="indeterminate"/>
+</ng-template>
+
+<ng-container *ngIf="loadConstants$ | async"></ng-container>

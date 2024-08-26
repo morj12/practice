@@ -1,0 +1,9 @@
+.upsert-todo-dialog {
+  &-input {
+    margin-top: 10px;
+    width: 100%;
+    &-hint {
+      color: red;
+    }
+  }
+}
