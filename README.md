@@ -4,7 +4,7 @@ Front-end execution:
 
 - Needed versions: Node v20.16.0, Angular 18.2.1
 
-- Open practice folter with cmd
+- Open practice-front folter with cmd
 - Run "npm install" to download dependencies
 - Run "ng serve" to execute the program
 - Go to localhost:4200
